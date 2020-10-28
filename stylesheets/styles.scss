@@ -39,23 +39,18 @@ body {
   }
 
   .choices-container {
-    // border: 3px solid blue;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-gap: 1em 2em;
-    padding: 1em;
+    // border: 3px solid orange;
+    display: flex;
+    flex-direction: column;
 
     button {
+      margin: 10px 0;
       background: rgb(0, 29, 89);
-      color: orange;
+      color: white;
       border: 2px solid rgb(46, 162, 207);
       border-radius: 4px;
       padding: 1em 4em;
       font-size: 1rem;
-
-      .choice {
-        color: white;
-      }
 
       &:hover {
         background: rgba(46, 162, 207, 0.7);

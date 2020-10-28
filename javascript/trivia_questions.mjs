@@ -1,7 +1,7 @@
 const startButton = document.querySelector('.start');
 const triviaContainer = document.querySelector('.trivia-container');
 const questionElement = document.querySelector('.question');
-const choiceButtons = document.querySelectorAll('.choices-container button');
+const choicesContainer = document.querySelector('.choices-container');
 
 ///////////////////////////////////////////////////////
 ////////// POPULATE QUESTIONS ARRAY VIA JSON //////////
@@ -45,4 +45,14 @@ const nextQuestion = () => {
 
 const showQuestion = (question) => {
   questionElement.innerText = question.question;
+
+  const choicesAll = [...question.incorrect, question.correct];
+  console.log(choicesAll);
+
+  const shuffledChoices = choicesAll.sort(() => Math.random() - 0.5);
+  console.log(shuffledChoices);
+
+  shuffledChoices.map((choice) => {
+    choicesContainer.innerHTML += `<button class="choice">${choice}</button>`;
+  });
 };
