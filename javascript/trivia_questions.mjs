@@ -2,6 +2,7 @@ const startButton = document.querySelector('.start');
 const triviaContainer = document.querySelector('.trivia-container');
 const questionElement = document.querySelector('.question');
 const choicesContainer = document.querySelector('.choices-container');
+const scoreDisplay = document.querySelector('.score');
 
 ///////////////////////////////////////////////////////
 ////////// POPULATE QUESTIONS ARRAY VIA JSON //////////
@@ -34,6 +35,12 @@ const startGame = () => {
 };
 
 startButton.addEventListener('click', startGame);
+
+/////////////////////////////
+////////// SCORING //////////
+/////////////////////////////
+
+let score = 0;
 
 ////////////////////////////////////////////
 ////////// RESET QUESTION & CHOICES ////////
@@ -74,6 +81,8 @@ const showQuestion = (question) => {
         const playerChoice = event.currentTarget.innerText;
 
         if (playerChoice === correct) {
+          score++;
+          scoreDisplay.innerText = score;
           nextQuestion();
         } else {
           nextQuestion();
