@@ -55,25 +55,23 @@ body {
 }
 
 .trivia-container .choices-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (auto)[2];
-      grid-template-columns: repeat(2, auto);
-  grid-gap: 1em 2em;
-  padding: 1em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .trivia-container .choices-container button {
+  margin: 10px 0;
   background: #001d59;
-  color: orange;
+  color: white;
   border: 2px solid #2ea2cf;
   border-radius: 4px;
   padding: 1em 4em;
   font-size: 1rem;
-}
-
-.trivia-container .choices-container button .choice {
-  color: white;
 }
 
 .trivia-container .choices-container button:hover {
