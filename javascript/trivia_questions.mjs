@@ -35,24 +35,50 @@ const startGame = () => {
 
 startButton.addEventListener('click', startGame);
 
+////////////////////////////////////////////
+////////// RESET QUESTION & CHOICES ////////
+////////////////////////////////////////////
+
+const resetQuestion = () => {
+  questionElement.innerText = '';
+  choicesContainer.innerHTML = '';
+};
+
 ///////////////////////////////////////////////
 ////////// SET & SHOW NEXT QUESTIONS //////////
 ///////////////////////////////////////////////
 
 const nextQuestion = () => {
+  resetQuestion();
+
   showQuestion(shuffledQuestions[questionIndex]);
+  questionIndex++;
 };
 
 const showQuestion = (question) => {
   questionElement.innerText = question.question;
 
   const choicesAll = [...question.incorrect, question.correct];
-  console.log(choicesAll);
-
   const shuffledChoices = choicesAll.sort(() => Math.random() - 0.5);
-  console.log(shuffledChoices);
+
+  const correct = question.correct;
+  console.log(correct);
 
   shuffledChoices.map((choice) => {
-    choicesContainer.innerHTML += `<button class="choice">${choice}</button>`;
+    choicesContainer.innerHTML += `<button type="submit" class="choice">${choice}</button>`;
+
+    const choiceButtons = choicesContainer.querySelectorAll('button');
+
+    choiceButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const playerChoice = event.currentTarget.innerText;
+
+        if (playerChoice === correct) {
+          nextQuestion();
+        } else {
+          nextQuestion();
+        }
+      });
+    });
   });
 };
