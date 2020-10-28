@@ -45,4 +45,12 @@ const nextQuestion = () => {
 
 const showQuestion = (question) => {
   questionElement.innerText = question.question;
+
+  const choicesAll = [...question.incorrect, question.correct];
+  const shuffledChoices = choicesAll.sort(() => Math.random() - 0.5);
+
+  choiceButtons.forEach((button) => {
+    button.innerHTML = shuffledChoices[0];
+    shuffledChoices.shift();
+  });
 };
