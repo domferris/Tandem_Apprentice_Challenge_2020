@@ -32,6 +32,10 @@ body {
   color: white;
 }
 
+.hidden {
+  display: none;
+}
+
 .trivia-container {
   width: 80%;
   max-width: 80%;
