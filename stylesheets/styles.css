@@ -9,5 +9,70 @@ html {
   padding: 0;
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #00157c;
+  color: white;
+}
+
+.trivia-container {
+  width: 80%;
+  max-width: 80%;
+}
+
+.trivia-container .question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.8rem;
+}
+
+.trivia-container .choices-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  grid-gap: 1em 2em;
+  padding: 1em;
+}
+
+.trivia-container .choices-container button {
+  background: #001d59;
+  color: orange;
+  border: 2px solid #2ea2cf;
+  border-radius: 4px;
+  padding: 1em 4em;
+  font-size: 1rem;
+}
+
+.trivia-container .choices-container button .choice {
+  color: white;
+}
+
+.trivia-container .choices-container button:hover {
+  background: rgba(46, 162, 207, 0.7);
 }
 /*# sourceMappingURL=styles.css.map */
