@@ -73,6 +73,6 @@ body {
 }
 
 .trivia-container .choices-container button:hover {
-  background: blue;
+  background: rgba(46, 162, 207, 0.7);
 }
 /*# sourceMappingURL=styles.css.map */
