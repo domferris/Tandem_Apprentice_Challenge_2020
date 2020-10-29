@@ -1,3 +1,4 @@
+const landing = document.querySelector('.landing');
 const startButton = document.querySelector('.start');
 const triviaContainer = document.querySelector('.trivia-container');
 const questionElement = document.querySelector('.question');
@@ -27,7 +28,8 @@ let shuffledQuestions, questionIndex;
 const startGame = () => {
   setScore(score);
 
-  startButton.classList.add('hidden');
+  landing.classList.add('hidden');
+  scoreDisplay.classList.remove('hidden');
   triviaContainer.classList.remove('hidden');
 
   shuffledQuestions = triviaQuestions.sort(() => Math.random() - 0.5);
@@ -116,7 +118,8 @@ const showQuestion = (question) => {
 
 const gameOver = (finalScore) => {
   scoreDisplay.innerText = `Final score: ${finalScore}`;
-  startButton.classList.remove('hidden');
+  landing.classList.remove('hidden');
+  triviaContainer.classList.add('hidden');
   startButton.innerHTML = 'Play again';
   score = 0;
 };

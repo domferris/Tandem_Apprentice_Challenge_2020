@@ -13,6 +13,11 @@ html {
 }
 
 body {
+  background: #00157c;
+  color: white;
+}
+
+.main {
   height: 100vh;
   width: 100vw;
   display: -webkit-box;
@@ -28,18 +33,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #00157c;
-  color: white;
 }
 
 button {
-  margin: 10px 0;
   background: #001d59;
   color: white;
   border: 2px solid #a8e6ff;
   border-radius: 4px;
-  padding: 1em 4em;
+  padding: 1em 2em;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 button:hover {
@@ -47,26 +50,50 @@ button:hover {
   color: black;
 }
 
-.hidden {
-  display: none;
-}
-
-.trivia-container {
-  width: 80%;
-  max-width: 80%;
-}
-
-.trivia-container .question {
+.landing {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.8rem;
+}
+
+.landing .logo {
+  width: 80%;
+  max-width: 725px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  margin-bottom: 1em;
+}
+
+.score {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f3bb4c;
+  margin: 1em 0;
+}
+
+.trivia-container {
+  width: 100%;
+}
+
+.trivia-container .question {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 1em 0;
+  background: #001d59;
+  color: white;
+  border: 2px solid #a8e6ff;
+  border-radius: 4px;
+  padding: 1em;
 }
 
 .trivia-container .choices-container {
@@ -77,6 +104,10 @@ button:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.trivia-container .choices-container button {
+  margin: 0.2em 0;
 }
 
 .trivia-container .choices-container button:hover {
@@ -98,5 +129,9 @@ button:hover {
 .trivia-container .choices-container button.final-answer {
   background: #dc9b1d;
   color: black;
+}
+
+.hidden {
+  display: none;
 }
 /*# sourceMappingURL=styles.css.map */
