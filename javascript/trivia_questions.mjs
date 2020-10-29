@@ -64,6 +64,7 @@ const resetQuestion = () => {
 const nextQuestion = () => {
   resetQuestion();
 
+  // limit game to 10 questions
   if (questionIndex < 10) {
     showQuestion(shuffledQuestions[questionIndex]);
     questionIndex++;
@@ -76,27 +77,34 @@ const nextQuestion = () => {
 const showQuestion = (question) => {
   questionElement.innerText = question.question;
 
+  // collect and shuffle all possible answers
   const choicesAll = [...question.incorrect, question.correct];
   const shuffledChoices = choicesAll.sort(() => Math.random() - 0.5);
 
   const correct = question.correct;
 
   shuffledChoices.map((choice) => {
-    choicesContainer.innerHTML += `<button type="submit" class="choice">${choice}</button>`;
-
+    // populate buttons with multiple choice answers
+    choicesContainer.innerHTML += `<button>${choice}</button>`;
     const choiceButtons = choicesContainer.querySelectorAll('button');
 
     choiceButtons.forEach((button) => {
-      button.addEventListener('click', (event) => {
-        const playerChoice = event.currentTarget.innerText;
+      if (button.innerText === correct) button.classList.add('correct');
 
-        if (playerChoice === correct) {
-          score++;
+      button.addEventListener('click', (event) => {
+        const playerChoice = event.currentTarget;
+        playerChoice.classList.add('final-answer');
+        if (playerChoice.innerText === correct) score++;
+
+        revealAnswer(choiceButtons);
+
+        // delay score update after correct answer is revealed
+        setTimeout(() => {
           setScore(score);
-          nextQuestion();
-        } else {
-          nextQuestion();
-        }
+        }, 3000);
+
+        // delay transition to next question after score is updated
+        setTimeout(nextQuestion, 4500);
       });
     });
   });
@@ -111,4 +119,15 @@ const gameOver = (finalScore) => {
   startButton.classList.remove('hidden');
   startButton.innerHTML = 'Play again';
   score = 0;
+};
+
+///////////////////////////////////////////
+////////// REVEAL CORRECT ANSWER //////////
+///////////////////////////////////////////
+
+const revealAnswer = (buttons) => {
+  buttons.forEach((button) => {
+    button.disabled = true;
+    button.classList.add('answered');
+  });
 };
