@@ -25,6 +25,8 @@ let shuffledQuestions, questionIndex;
 ////////////////////////////////
 
 const startGame = () => {
+  setScore(score);
+
   startButton.classList.add('hidden');
   triviaContainer.classList.remove('hidden');
 
@@ -42,6 +44,10 @@ startButton.addEventListener('click', startGame);
 
 let score = 0;
 
+const setScore = (score) => {
+  scoreDisplay.innerText = `Score: ${score}`;
+};
+
 ////////////////////////////////////////////
 ////////// RESET QUESTION & CHOICES ////////
 ////////////////////////////////////////////
@@ -58,8 +64,17 @@ const resetQuestion = () => {
 const nextQuestion = () => {
   resetQuestion();
 
-  showQuestion(shuffledQuestions[questionIndex]);
-  questionIndex++;
+  if (questionIndex < 10) {
+    console.log(questionIndex);
+    showQuestion(shuffledQuestions[questionIndex]);
+    questionIndex++;
+  } else {
+    const finalScore = score;
+    gameOver(finalScore);
+  }
+
+  // console.log(questionIndex);
+  // console.log(shuffledQuestions[questionIndex]);
 };
 
 const showQuestion = (question) => {
@@ -82,7 +97,7 @@ const showQuestion = (question) => {
 
         if (playerChoice === correct) {
           score++;
-          scoreDisplay.innerText = score;
+          setScore(score);
           nextQuestion();
         } else {
           nextQuestion();
@@ -90,4 +105,15 @@ const showQuestion = (question) => {
       });
     });
   });
+};
+
+///////////////////////////////
+////////// GAME OVER //////////
+///////////////////////////////
+
+const gameOver = (finalScore) => {
+  scoreDisplay.innerText = `Final score: ${finalScore}`;
+  startButton.classList.remove('hidden');
+  startButton.innerHTML = 'Play again';
+  score = 0;
 };
