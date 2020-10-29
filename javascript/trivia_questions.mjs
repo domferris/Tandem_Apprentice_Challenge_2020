@@ -2,6 +2,7 @@ const startButton = document.querySelector('.start');
 const triviaContainer = document.querySelector('.trivia-container');
 const questionElement = document.querySelector('.question');
 const choicesContainer = document.querySelector('.choices-container');
+const scoreDisplay = document.querySelector('.score');
 
 ///////////////////////////////////////////////////////
 ////////// POPULATE QUESTIONS ARRAY VIA JSON //////////
@@ -24,6 +25,8 @@ let shuffledQuestions, questionIndex;
 ////////////////////////////////
 
 const startGame = () => {
+  setScore(score);
+
   startButton.classList.add('hidden');
   triviaContainer.classList.remove('hidden');
 
@@ -35,24 +38,77 @@ const startGame = () => {
 
 startButton.addEventListener('click', startGame);
 
+/////////////////////////////
+////////// SCORING //////////
+/////////////////////////////
+
+let score = 0;
+
+const setScore = (score) => {
+  scoreDisplay.innerText = `Score: ${score}`;
+};
+
+////////////////////////////////////////////
+////////// RESET QUESTION & CHOICES ////////
+////////////////////////////////////////////
+
+const resetQuestion = () => {
+  questionElement.innerText = '';
+  choicesContainer.innerHTML = '';
+};
+
 ///////////////////////////////////////////////
 ////////// SET & SHOW NEXT QUESTIONS //////////
 ///////////////////////////////////////////////
 
 const nextQuestion = () => {
-  showQuestion(shuffledQuestions[questionIndex]);
+  resetQuestion();
+
+  if (questionIndex < 10) {
+    showQuestion(shuffledQuestions[questionIndex]);
+    questionIndex++;
+  } else {
+    const finalScore = score;
+    gameOver(finalScore);
+  }
 };
 
 const showQuestion = (question) => {
   questionElement.innerText = question.question;
 
   const choicesAll = [...question.incorrect, question.correct];
-  console.log(choicesAll);
-
   const shuffledChoices = choicesAll.sort(() => Math.random() - 0.5);
-  console.log(shuffledChoices);
+
+  const correct = question.correct;
 
   shuffledChoices.map((choice) => {
-    choicesContainer.innerHTML += `<button class="choice">${choice}</button>`;
+    choicesContainer.innerHTML += `<button type="submit" class="choice">${choice}</button>`;
+
+    const choiceButtons = choicesContainer.querySelectorAll('button');
+
+    choiceButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const playerChoice = event.currentTarget.innerText;
+
+        if (playerChoice === correct) {
+          score++;
+          setScore(score);
+          nextQuestion();
+        } else {
+          nextQuestion();
+        }
+      });
+    });
   });
+};
+
+///////////////////////////////
+////////// GAME OVER //////////
+///////////////////////////////
+
+const gameOver = (finalScore) => {
+  scoreDisplay.innerText = `Final score: ${finalScore}`;
+  startButton.classList.remove('hidden');
+  startButton.innerHTML = 'Play again';
+  score = 0;
 };
