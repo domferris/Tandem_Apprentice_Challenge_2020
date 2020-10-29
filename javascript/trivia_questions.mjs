@@ -65,16 +65,12 @@ const nextQuestion = () => {
   resetQuestion();
 
   if (questionIndex < 10) {
-    console.log(questionIndex);
     showQuestion(shuffledQuestions[questionIndex]);
     questionIndex++;
   } else {
     const finalScore = score;
     gameOver(finalScore);
   }
-
-  // console.log(questionIndex);
-  // console.log(shuffledQuestions[questionIndex]);
 };
 
 const showQuestion = (question) => {
@@ -84,7 +80,6 @@ const showQuestion = (question) => {
   const shuffledChoices = choicesAll.sort(() => Math.random() - 0.5);
 
   const correct = question.correct;
-  console.log(correct);
 
   shuffledChoices.map((choice) => {
     choicesContainer.innerHTML += `<button type="submit" class="choice">${choice}</button>`;
