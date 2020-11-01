@@ -1,4 +1,5 @@
 import { revealAnswer } from './reveal_answer.mjs';
+import { gameOver } from './game_over.mjs';
 
 const landing = document.querySelector('.landing');
 const startButton = document.querySelector('.start');
@@ -78,7 +79,12 @@ const nextQuestion = () => {
     questionIndex++;
   } else {
     const finalScore = score;
-    gameOver(finalScore);
+    gameOver(scoreDisplay, finalScore);
+
+    landing.classList.remove('hidden');
+    triviaContainer.classList.add('hidden');
+    startButton.innerHTML = 'Play again';
+    score = 0;
   }
 };
 
@@ -116,16 +122,4 @@ const showQuestion = (question) => {
       });
     });
   });
-};
-
-///////////////////////////////
-////////// GAME OVER //////////
-///////////////////////////////
-
-const gameOver = (finalScore) => {
-  scoreDisplay.innerText = `Final score: ${finalScore}`;
-  landing.classList.remove('hidden');
-  triviaContainer.classList.add('hidden');
-  startButton.innerHTML = 'Play again';
-  score = 0;
 };
