@@ -1,3 +1,4 @@
+import { triviaQuestions } from './trivia_questions.mjs';
 import { setScore } from './set_score.mjs';
 import { resetQuestion } from './reset_question.mjs';
 import { revealAnswer } from './reveal_answer.mjs';
@@ -10,29 +11,11 @@ const questionElement = document.querySelector('.question');
 const choicesContainer = document.querySelector('.choices-container');
 const scoreDisplay = document.querySelector('.score');
 
-///////////////////////////////////////////////////////
-////////// POPULATE QUESTIONS ARRAY VIA JSON //////////
-///////////////////////////////////////////////////////
-
-const triviaData =
-  'https://domferris.github.io/Tandem_Apprentice_Challenge_2020//data/Apprentice_TandemFor400_Data.json' ||
-  './../Apprentice_TandemFor400_Data.json';
-
-let triviaQuestions = [];
-
-fetch(triviaData)
-  .then((response) => response.json())
-  .then((data) => {
-    data.forEach((triviaQuestion) => {
-      triviaQuestions.push(triviaQuestion);
-    });
-  });
-
-let shuffledQuestions, questionIndex;
-
 ////////////////////////////////
 ////////// START GAME //////////
 ////////////////////////////////
+
+let shuffledQuestions, questionIndex;
 
 const startGame = () => {
   setScore(scoreDisplay, score);
