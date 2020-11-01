@@ -1,9 +1,9 @@
 # Tandem Apprentice Challenge 2020
-## Play [Who Wants to Be an Apprentice](https://domferris.github.io/Tandem_Apprentice_Challenge_2020/).
+## Let's play [Who Wants to Be an Apprentice](https://domferris.github.io/Tandem_Apprentice_Challenge_2020/)
 
 ### Player Instructions
 
-- Who Wants to Be an Apprentice is a trivia game.
+- **Who Wants to Be an Apprentice** is a trivia game.
 - Each round has 10 questions.
 - All questions are multiple-choice.
 - Choose carefully! **Button click = Final Answer**
