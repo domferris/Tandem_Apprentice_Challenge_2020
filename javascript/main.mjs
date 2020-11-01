@@ -83,10 +83,10 @@ const showQuestion = (question) => {
         // delay score update after correct answer is revealed
         setTimeout(() => {
           setScore(scoreDisplay, score);
-        }, 3000);
+        }, 2200);
 
         // delay transition to next question after score is updated
-        setTimeout(nextQuestion, 4500);
+        setTimeout(nextQuestion, 3500);
       });
     });
   });

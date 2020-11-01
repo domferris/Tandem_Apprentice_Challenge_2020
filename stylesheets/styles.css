@@ -133,8 +133,8 @@ button:hover {
 .choices-container button.answered.correct {
   background: #10af6d;
   color: black;
-  -webkit-transition-delay: 1.8s;
-          transition-delay: 1.8s;
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
 }
 
 .choices-container button.final-answer {
