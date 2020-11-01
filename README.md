@@ -19,8 +19,8 @@
 ### Desired Additional Features
 
 - [ ] Create automated tests for regression testing and any new features.
-- [ ] Refine animations to further mimic Who Wants to Be a Millionaire graphics.
-- [ ] Add (copyrighted) Who Wants to Be a Millionaire sound effects and music to build on the inspiration behind the design.
+- [ ] Refine animations to further mimic Who Wants to Be a Millionaire graphics. [Example](https://youtu.be/OFMUtWlUeyk?t=253)
+- [ ] Add (copyrighted) Who Wants to Be a Millionaire sound effects and music to build on the inspiration behind the design. [Example](https://youtu.be/OFMUtWlUeyk?t=253)
 - [ ] Add a personal high score feature where players can list their names or initials.
 - [ ] Display percentage of correct answers at the end of each round.
 - [ ] Add further trivia fun facts for each correct answer.
