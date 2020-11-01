@@ -9,11 +9,13 @@ const scoreDisplay = document.querySelector('.score');
 ////////// POPULATE QUESTIONS ARRAY VIA JSON //////////
 ///////////////////////////////////////////////////////
 
+const triviaData =
+  'https://domferris.github.io/Tandem_Apprentice_Challenge_2020//data/Apprentice_TandemFor400_Data.json' ||
+  './../Apprentice_TandemFor400_Data.json';
+
 let triviaQuestions = [];
 
-fetch(
-  'https://domferris.github.io/Tandem_Apprentice_Challenge_2020//data/Apprentice_TandemFor400_Data.json'
-)
+fetch(triviaData)
   .then((response) => response.json())
   .then((data) => {
     data.forEach((triviaQuestion) => {
