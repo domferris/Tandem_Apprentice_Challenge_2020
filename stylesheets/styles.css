@@ -82,7 +82,7 @@ button:hover {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
 .score {
@@ -133,8 +133,8 @@ button:hover {
 .choices-container button.answered.correct {
   background: #10af6d;
   color: black;
-  -webkit-transition-delay: 1.8s;
-          transition-delay: 1.8s;
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
 }
 
 .choices-container button.final-answer {
@@ -149,6 +149,7 @@ button:hover {
   }
   .logo {
     width: 60%;
+    margin-bottom: 3em;
   }
   .choices-container {
     display: -ms-grid;
