@@ -11,7 +11,9 @@ const scoreDisplay = document.querySelector('.score');
 
 let triviaQuestions = [];
 
-fetch('./../data/Apprentice_TandemFor400_Data.json')
+fetch(
+  'https://domferris.github.io/Tandem_Apprentice_Challenge_2020//data/Apprentice_TandemFor400_Data.json'
+)
   .then((response) => response.json())
   .then((data) => {
     data.forEach((triviaQuestion) => {
