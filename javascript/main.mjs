@@ -1,3 +1,4 @@
+import { resetQuestion } from './reset_question.mjs';
 import { revealAnswer } from './reveal_answer.mjs';
 import { gameOver } from './game_over.mjs';
 
@@ -57,21 +58,12 @@ const setScore = (score) => {
   scoreDisplay.innerText = `Score: ${score}`;
 };
 
-////////////////////////////////////////////
-////////// RESET QUESTION & CHOICES ////////
-////////////////////////////////////////////
-
-const resetQuestion = () => {
-  questionElement.innerText = '';
-  choicesContainer.innerHTML = '';
-};
-
 ///////////////////////////////////////////////
 ////////// SET & SHOW NEXT QUESTIONS //////////
 ///////////////////////////////////////////////
 
 const nextQuestion = () => {
-  resetQuestion();
+  resetQuestion(questionElement, choicesContainer);
 
   // limit game to 10 questions
   if (questionIndex < 10) {
