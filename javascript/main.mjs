@@ -1,3 +1,4 @@
+import { setScore } from './set_score.mjs';
 import { resetQuestion } from './reset_question.mjs';
 import { revealAnswer } from './reveal_answer.mjs';
 import { gameOver } from './game_over.mjs';
@@ -34,7 +35,7 @@ let shuffledQuestions, questionIndex;
 ////////////////////////////////
 
 const startGame = () => {
-  setScore(score);
+  setScore(scoreDisplay, score);
 
   landing.classList.add('hidden');
   scoreDisplay.classList.remove('hidden');
@@ -48,15 +49,7 @@ const startGame = () => {
 
 startButton.addEventListener('click', startGame);
 
-/////////////////////////////
-////////// SCORING //////////
-/////////////////////////////
-
 let score = 0;
-
-const setScore = (score) => {
-  scoreDisplay.innerText = `Score: ${score}`;
-};
 
 ///////////////////////////////////////////////
 ////////// SET & SHOW NEXT QUESTIONS //////////
@@ -106,7 +99,7 @@ const showQuestion = (question) => {
 
         // delay score update after correct answer is revealed
         setTimeout(() => {
-          setScore(score);
+          setScore(scoreDisplay, score);
         }, 3000);
 
         // delay transition to next question after score is updated
