@@ -55,7 +55,6 @@ button {
 }
 
 .logo {
-  // border: 1px solid red;
   width: 80%;
   max-width: 500px;
   max-width: 725px;
@@ -68,7 +67,6 @@ button {
 ////////////////////////////
 
 .score {
-  // border: 1px solid aqua;
   font-size: 1.2rem;
   font-weight: 600;
   color: rgb(243, 187, 76);
@@ -76,11 +74,9 @@ button {
 }
 
 .trivia-container {
-  // border: 1px solid red;
   width: 100%;
 
   .question {
-    // border: 1px solid green;
     font-size: 1.2rem;
     text-align: center;
     margin: 1em 0;
@@ -93,12 +89,10 @@ button {
 }
 
 .choices-container {
-  // border: 1px solid green;
   display: flex;
   flex-direction: column;
 
   button {
-    // border: 1px solid red;
     margin: 0.25em 0;
 
     &:hover {
@@ -130,7 +124,6 @@ button {
   }
 
   .logo {
-    // border: 1px solid green;
     width: 60%;
   }
 
