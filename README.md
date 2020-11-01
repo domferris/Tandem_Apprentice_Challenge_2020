@@ -1,21 +1,29 @@
-# Who Wants to Be an Apprentice
-## Tandem Apprentice Challenge 2020
+# Tandem Apprentice Challenge 2020
+## Play [Who Wants to Be an Apprentice](https://domferris.github.io/Tandem_Apprentice_Challenge_2020/).
 
-Want to play? See trivia game challenge submission [here](https://domferris.github.io/Tandem_Apprentice_Challenge_2020/).
+### Player Instructions
 
-### Rules
-
-- Each round of trivia has 10 questions.
+- Who Wants to Be an Apprentice is a trivia game.
+- Each round has 10 questions.
 - All questions are multiple-choice.
 - Choose carefully! **Button click = Final Answer**
+- At the end of a round, click **Play again** to start a new game.
 
 > Trivia questions provided by Tandem
 
-### Criteria
+### Known Issue(s)
 
-1. A user can view questions.
-2. Questions with their multiple choice options must be displayed one at a time.
-3. Questions should not repeat in a round.
-4. A user can select only 1 answer out of the 4 possible answers.
-5. The correct answer must be revealed after a user has submitted their answer.
-6. A user can see the score they received at the end of the round
+- [ ] The code used to shuffle the questions and their answers is not complex. I would like to work on a better shuffle function to *truly* randomize the data.
+
+### Desired Additional Features
+
+- [ ] Refine animations to further mimic Who Wants to Be a Millionaire graphics.
+- [ ] Add (copyrighted) Who Wants to Be a Millionaire sound effects and music to build on the inspiration behind the design.
+- [ ] Add a personal high score feature where players can list their names or initials.
+- [ ] Display percentage of correct answers at the end of each round.
+- [ ] Add further trivia fun facts for each correct answer.
+- [ ] Add an option to allow players to select the number of questions per round based on a pre-determined list of choices.
+- [ ] More in-depth player stats (number of rounds played, average score).
+- [ ] Add more trivia questions sourced from available trivia databases and create a proper database combined with existing Tandem-provided questions.
+- [ ] Categorize questions in database and add the percentage of correct answers by category to the player stats.
+- [ ] Create automated tests for new features and regression testing.
