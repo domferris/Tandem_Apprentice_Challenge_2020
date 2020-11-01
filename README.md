@@ -10,7 +10,7 @@
 - Choose carefully! **Button click = Final Answer**
 - At the end of a round, click **Play again** to start a new game.
 
-> To play this locally, open index.html in any browser.
+> To play this locally, open **index.html** in any browser.
 
 ### Known Issue(s)
 
