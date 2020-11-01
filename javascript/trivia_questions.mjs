@@ -11,7 +11,7 @@ const scoreDisplay = document.querySelector('.score');
 
 let triviaQuestions = [];
 
-fetch('./../Apprentice_TandemFor400_Data.json')
+fetch('./../data/Apprentice_TandemFor400_Data.json')
   .then((response) => response.json())
   .then((data) => {
     data.forEach((triviaQuestion) => {
