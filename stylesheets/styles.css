@@ -76,7 +76,6 @@ button:hover {
 }
 
 .logo {
-  border: 1px solid red;
   width: 80%;
   max-width: 500px;
   max-width: 725px;
@@ -154,8 +153,8 @@ button:hover {
   .choices-container {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (auto)[2];
-        grid-template-columns: repeat(2, auto);
+    -ms-grid-columns: calc(50% - 0.25em) calc(50% - 0.25em);
+        grid-template-columns: calc(50% - 0.25em) calc(50% - 0.25em);
     grid-gap: 0.5em;
   }
   .choices-container button {

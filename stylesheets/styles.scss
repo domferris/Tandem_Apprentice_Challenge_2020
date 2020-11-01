@@ -55,7 +55,7 @@ button {
 }
 
 .logo {
-  border: 1px solid red;
+  // border: 1px solid red;
   width: 80%;
   max-width: 500px;
   max-width: 725px;
@@ -93,11 +93,12 @@ button {
 }
 
 .choices-container {
-  // border: 1px solid orange;
+  // border: 1px solid green;
   display: flex;
   flex-direction: column;
 
   button {
+    // border: 1px solid red;
     margin: 0.25em 0;
 
     &:hover {
@@ -135,7 +136,7 @@ button {
 
   .choices-container {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: calc(50% - 0.25em) calc(50% - 0.25em);
     grid-gap: 0.5em;
 
     button {
