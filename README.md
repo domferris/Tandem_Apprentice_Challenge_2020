@@ -2,7 +2,6 @@
 ## Tandem Apprentice Challenge 2020
 
 Want to play? See trivia game challenge submission [here](https://domferris.github.io/Tandem_Apprentice_Challenge_2020/).
-[View repository.](https://github.com/domferris/Tandem_Apprentice_Challenge_2020)
 
 ### Rules
 
